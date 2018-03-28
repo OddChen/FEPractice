@@ -1,2 +1,2 @@
-# JavaScriptPractice
-JavaScript学习过程中的一些练习
+# FEPractice
+前端学习过程中的一些练习
