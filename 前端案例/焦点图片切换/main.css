@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #393d49;
+}
+
+.container {
+  width: 1000px;
+  height: 500px;
+}
+
+.container ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* 小图片 */
+.container ul li {
+  width: 200px;
+  cursor: pointer;
+}
+.container ul li img {
+  width: 100%;
+  border: 5px solid transparent;
+}
+
+/* 大图片 */
+.container ul .bigImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 400px;
+  border: 5px solid transparent;
+  background: url(../img/1.jpg) no-repeat;
+  /* 背景图片尺寸 contain:扩展至最大尺寸，使其宽高完全适应内容区域*/
+  background-size: contain;
+  /* transition: all 0.5s; */
+  animation: CarouselFigure-bigimage 10s alternate infinite;
+}
+
+/* 移动框 */
+.container ul .frame {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 200px;
+  height: 80px;
+  border: 5px solid salmon;
+  /* 会覆盖下面的图片，导致鼠标移动上来的时候选中的是这个移动框，禁止鼠标捕获即可 */
+  /* pointer-events: none; */
+  /* transition: all 0.5s; */
+  animation: CarouseFigure-frame 10s alternate infinite;
+}
+
+.container ul .frame::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 15px;
+  background-color: salmon;
+  /* 裁切三角形 */
+  /* 设置三个点的(x,y)坐标然后连起来，x轴向右 y轴向下 */
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+/* 选中某个图，暂停动画 */
+.container ul .frame:hover {
+  animation-play-state: paused;
+}
+.container ul .frame:hover ~ .bigImage {
+  animation-play-state: paused;
+}
+
+/* .container ul li:nth-child(1):hover ~ .bigImage {
+  animation-fill-mode: none;
+  background-image: url(../img/1.jpg);
+}
+.container ul li:nth-child(1):hover ~ .frame {
+  animation-fill-mode: none;
+  left: 0;
+} */
+/* 
+.container ul li:nth-child(2):hover ~ .bigImage {
+  background-image: url(../img/2.jpg);
+}
+.container ul li:nth-child(2):hover ~ .frame {
+  left: 200px;
+}
+.container ul li:nth-child(3):hover ~ .bigImage {
+  background-image: url(../img/3.jpg);
+}
+.container ul li:nth-child(3):hover ~ .frame {
+  left: 400px;
+}
+.container ul li:nth-child(4):hover ~ .bigImage {
+  background-image: url(../img/4.jpg);
+}
+.container ul li:nth-child(4):hover ~ .frame {
+  left: 600px;
+}
+.container ul li:nth-child(5):hover ~ .bigImage {
+  background-image: url(../img/5.jpg);
+}
+.container ul li:nth-child(5):hover ~ .frame {
+  left: 800px; 
+} */
+
+@keyframes CarouselFigure-bigimage {
+  0%,
+  3% {
+    background-image: url(../img/1.jpg);
+  }
+  25% {
+    background-image: url(../img/2.jpg);
+  }
+  50% {
+    background-image: url(../img/3.jpg);
+  }
+  75% {
+    background-image: url(../img/4.jpg);
+  }
+  100% {
+    background-image: url(../img/5.jpg);
+  }
+}
+@keyframes CarouseFigure-frame {
+  0%,
+  3% {
+    left: 0;
+  }
+  25% {
+    left: 200px;
+  }
+  50% {
+    left: 400px;
+  }
+  75% {
+    left: 600px;
+  }
+  100% {
+    left: 800px;
+  }
+}

@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.container .ghost {
+  position: relative;
+  width: 150px;
+  height: 225px;
+  border-radius: 75px 75px 0 0;
+  background-color: #fff;
+  box-shadow: -17px 0 0 #dbdbdb inset, 0 0 50px #5939db;
+  animation: ghost 2.5s infinite;
+}
+
+/* 眼睛 */
+.container .ghost .ghostEyes {
+  display: flex;
+  justify-content: space-around;
+  width: 90px;
+  padding-top: 70px;
+  margin: 0 auto;
+}
+.container .ghost .ghostEyes::before,
+.container .ghost .ghostEyes::after {
+  content: '';
+  width: 15px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #00034b;
+}
+
+/* 腮红 */
+.container .ghost .ghostDimples {
+  display: flex;
+  justify-content: space-around;
+  width: 130px;
+  padding-top: 13px;
+  margin: 0 auto;
+}
+.container .ghost .ghostDimples::before,
+.container .ghost .ghostDimples::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffbeff;
+}
+
+/* jio部 */
+.container .ghost .ghostFeet {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: -13px;
+}
+.container .ghost .ghostFeet .ghostFoot {
+  width: 25%;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+/* 17/150/4 % */
+.container .ghost .ghostFeet .ghostFoot:last-child {
+  background-image: linear-gradient(to right, #fff 55%, #dbdbdb 45%);
+}
+
+.container .shadow {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  margin-top: 50px;
+  /* margin-left: 17px; */
+  border-radius: 50%;
+  background-color: #000232;
+  animation: shadow 2.5s infinite;
+}
+
+/* 动画 */
+@keyframes ghost {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
