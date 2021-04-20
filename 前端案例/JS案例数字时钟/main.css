@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #827593;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 560px;
+  height: 320px;
+  background-color: #e5e3e8;
+}
+
+.container .menu {
+  display: flex;
+  width: 300px;
+  height: 85px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .menu div {
+  width: 100%;
+  text-align: center;
+}
+.container .menu span {
+  cursor: pointer;
+}
+
+.container .clock {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 150px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #5f546e;
+  box-shadow: 0 0 40px rgb(0 0 0 / 60%);
+}
+.container .clock .clock-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 60px;
+  margin: 0 30px;
+}
+.container .clock .clock-item span {
+  font-size: 60px;
+  font-weight: 100;
+  letter-spacing: 5px;
+}
+.container .clock .clock-item div {
+  font-size: 12px;
+  color: #ccc;
+}
+.container .clock .clock-item:not(:last-child)::after {
+  content: ':';
+  position: absolute;
+  width: 30px;
+  top: 42%;
+  right: -45px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.tip {
+  position: absolute;
+  top: calc(63%);
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+}
