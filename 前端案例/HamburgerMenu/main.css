@@ -20,6 +20,7 @@ header {
 #toggler:checked ~ label .hamburger-container span:nth-child(1) {
   transform: rotate(45deg);
   top: 4px;
+  /* 先执行top移动动画然后执行transform动画 */
   transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
 }
 #toggler:checked ~ label .hamburger-container span:nth-child(2) {

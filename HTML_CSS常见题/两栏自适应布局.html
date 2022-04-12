@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>左边定宽，右边自适应</title>
+    <style>
+      /* .left {
+        width: 100px;
+        height: 100vh;
+        background-color: rgb(245, 191, 12);
+        float: left;
+      }
+      .right {
+        width: 100%; 或者 calc(100% - 100px)
+        height: 100vh;
+        background-color: rgb(17, 238, 36);
+        margin-left: 100px;
+      } */
+
+      /* flex布局 */
+      .father {
+        display: flex;
+        flex-direction: row;
+      }
+      .left {
+        width: 100px;
+        height: 100vh;
+        background-color: rgb(245, 191, 12);
+      }
+      .right {
+        flex: 1;
+        height: 100vh;
+        background-color: rgb(17, 238, 36);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </body>
+</html>

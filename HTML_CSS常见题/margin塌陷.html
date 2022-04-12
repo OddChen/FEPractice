@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>margin塌陷的问题</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .father {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(142, 253, 138);
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      /* 子盒子的margin-top作用在父盒子上 */
+      .children {
+        width: 100px;
+        height: 100px;
+        background-color: #f3e356;
+        margin-top: 15px;
+      }
+      /* 垂直之间塌陷的原则是以两盒子最大的外边距为准 */
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #f3e356;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="children"></div>
+    </div>
+    <div class="box"></div>
+  </body>
+</html>

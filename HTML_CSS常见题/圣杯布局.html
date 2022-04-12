@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>圣杯布局</title>
+    <style>
+      /* 浮动实现 */
+      /* body {
+        margin: 0;
+        padding: 0;
+      }
+      .header,
+      .footer {
+        width: 100%;
+        height: 20px;
+        background-color: #0ff;
+      }
+      .container {
+        height: 500px;
+        padding: 0 300px 0 200px;
+      }
+      .column {
+        float: left;
+        height: 100%;
+      }
+      .left {
+        width: 200px;
+        margin-left: -200px;
+        background-color: #f88;
+      }
+      .center {
+        width: 100%;
+        background-color: #f00;
+      }
+      .right {
+        width: 300px;
+        margin-right: -300px;
+        background-color: #88f;
+      }
+      .footer {
+        clear: both;
+      } */
+
+      /* flex实现:center设置flex:1,其他两个定宽 */
+
+      /* grid布局 */
+      body {
+        display: grid;
+        margin: 0;
+        padding: 0;
+      }
+      .header,
+      .footer {
+        background-color: rgba(29, 27, 27, 0.8);
+        height: 60px;
+        grid-column: 1/5;
+      }
+      .heder {
+        grid-row: 1;
+      }
+      .footer {
+        grid-row: 3;
+      }
+      .column {
+        height: 300px;
+      }
+      .left {
+        grid-row: 2;
+        grid-column: 1/2;
+        background: rgba(95, 179, 235, 0.972);
+      }
+      .center {
+        grid-row: 2;
+        grid-column: 2/4;
+        background: rgb(73, 205, 146);
+      }
+      .right {
+        grid-row: 2;
+        grid-column: 4/5;
+        background: rgb(231, 105, 2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Header</div>
+    <!-- <div class="container"> -->
+    <div class="left column">Left</div>
+    <div class="center column">Center</div>
+    <div class="right column">Right</div>
+    <!-- </div> -->
+    <div class="footer">Footer</div>
+  </body>
+</html>
